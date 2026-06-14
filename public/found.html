@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Found Items</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>GRIET Found Items Desk</h1>
+   <nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="lost.html">Lost Items</a>
+    <a href="found.html">Found Items</a>
+    <a href="report.html">Report Item</a>
+    <a href="myreports.html">My Reports</a>
+    <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+    <a href="#" onclick="logout()" style="color: var(--error);">Logout</a>
+</nav>
+</header>
+
+<div class="container">
+    <input type="text" id="searchFound" placeholder="Search through found objects..." onkeyup="loadFoundItems()">
+    <div id="foundList" class="grid-layout"></div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    loadFoundItems();
+</script>
+</body>
+</html>

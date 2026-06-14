@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GRIET Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>GRIET Lost & Found Management Portal</h1>
+   <nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="lost.html">Lost Items</a>
+    <a href="found.html">Found Items</a>
+    <a href="report.html">Report Item</a>
+    <a href="myreports.html">My Reports</a>
+    <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+    <a href="#" onclick="logout()" style="color: var(--error);">Logout</a>
+</nav>
+</header>
+
+<div class="container">
+    <div class="stats">
+        <div class="stat-card">
+            <h2 id="totalItems">0</h2>
+            <p>Total Reports</p>
+        </div>
+        <div class="stat-card">
+            <h2 id="lostCount">0</h2>
+            <p>Lost Items Listed</p>
+        </div>
+        <div class="stat-card">
+            <h2 id="foundCount">0</h2>
+            <p>Found Items Items</p>
+        </div>
+    </div>
+
+    <input type="text" id="search" placeholder="Search items by name or category..." onkeyup="loadDashboard()">
+    
+    <h2 style="border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-top:2rem;">Recent Open Reports</h2>
+    <div id="dashboardItems" class="grid-layout"></div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    loadDashboard();
+</script>
+</body>
+</html>

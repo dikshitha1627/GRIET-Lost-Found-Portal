@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Reports</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Your Campus Listings</h1>
+    <nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="lost.html">Lost Items</a>
+    <a href="found.html">Found Items</a>
+    <a href="report.html">Report Item</a>
+    <a href="myreports.html">My Reports</a>
+    <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+    <a href="#" onclick="logout()" style="color: var(--error);">Logout</a>
+</nav>
+</header>
+
+<div class="container">
+    <h2 style="border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-bottom:1.5rem;">Logs Submitted By You</h2>
+    <div id="myReports" class="grid-layout"></div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    loadMyReports();
+</script>
+</body>
+</html>

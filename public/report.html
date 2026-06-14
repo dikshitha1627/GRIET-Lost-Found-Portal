@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Report Item</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>GRIET Lost & Found Management Portal</h1>
+    <nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="lost.html">Lost Items</a>
+    <a href="found.html">Found Items</a>
+    <a href="report.html">Report Item</a>
+    <a href="myreports.html">My Reports</a>
+    <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+    <a href="#" onclick="logout()" style="color: var(--error);">Logout</a>
+</nav>
+</header>
+
+<div class="container">
+    <h1>Report Lost / Found Item</h1>
+
+    <div class="card">
+        <label style="display:block; text-align:left; margin-bottom:5px;">Item Name</label>
+        <input type="text" id="itemName" placeholder="Item Name">
+
+        <label style="display:block; text-align:left; margin-bottom:5px;">Category</label>
+        <select id="category">
+            <option value="ID Card">ID Card</option>
+            <option value="Wallet">Wallet</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Keys">Keys</option>
+            <option value="Books">Books</option>
+            <option value="Others">Others</option>
+        </select>
+
+        <label style="display:block; text-align:left; margin-bottom:5px;">Description</label>
+        <textarea id="description" placeholder="Description"></textarea>
+
+        <label style="display:block; text-align:left; margin-bottom:5px;">Location</label>
+        <input type="text" id="location" placeholder="Location">
+
+        <label style="display:block; text-align:left; margin-bottom:5px;">Type</label>
+        <select id="type">
+            <option value="Lost">Lost</option>
+            <option value="Found">Found</option>
+        </select>
+
+        <label style="display:block; text-align:left; margin-bottom:5px;">Upload Snapshot (Optional)</label>
+        <input type="file" id="itemImage" accept="image/*" style="margin-bottom:20px;">
+
+        <button onclick="addItem()">Submit</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Report Lost Item</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>GRIET Lost & Found Portal</h1>
+</header>
+
+<div class="container">
+<div class="card">
+<h2>Report Lost Item</h2>
+
+<input type="text" id="itemName" placeholder="Item Name">
+
+<select id="category">
+<option>ID Card</option>
+<option>Wallet</option>
+<option>Mobile</option>
+<option>Laptop</option>
+<option>Keys</option>
+<option>Books</option>
+<option>Others</option>
+</select>
+
+<textarea id="description" placeholder="Describe the item"></textarea>
+<input type="text" id="location" placeholder="Where was it lost?">
+
+<label style="display:block; text-align:left; margin: 10px 0 5px 0;">Attach Image Reference</label>
+<input type="file" id="itemImage" accept="image/*" style="margin-bottom:20px;">
+
+<button onclick="submitLost()">Report Lost Item</button>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

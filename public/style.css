@@ -1,0 +1,352 @@
+:root {
+    --primary-color: #004d40; /* GRIET Deep Teal */
+    --secondary-color: #00796b;
+    --accent-color: #d4af37; /* GRIET Academic Gold */
+    --bg-dark: #0a1917;
+    --bg-card: rgba(255, 255, 255, 0.08);
+    --text-main: #f5f5f5;
+    --text-muted: #b0bec5;
+    --error: #e57373;
+    --success: #81c784;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #12332d 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header & Navigation Styling */
+header {
+    background: rgba(0, 77, 64, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid var(--accent-color);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: #fff;
+    background: var(--secondary-color);
+    box-shadow: 0 0 8px var(--accent-color);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 2rem auto;
+    flex: 1;
+}
+
+/* Auth Pages Centering Card */
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.card {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.card h2 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Inputs & Form Elements */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--accent-color);
+    color: #000;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #fff;
+    box-shadow: 0 0 15px var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Stats Counter Grid */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, rgba(0, 77, 64, 0.4), rgba(0, 121, 107, 0.2));
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.stat-card h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.stat-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+/* Item List Grid UI */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.item {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 5px solid var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+
+.item:hover {
+    transform: scale(1.02);
+}
+
+.item h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.item p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+/* Dynamic Badge Tags */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+
+.lost { background-color: rgba(229, 115, 115, 0.2); color: var(--error); border: 1px solid var(--error); }
+.found { background-color: rgba(129, 199, 132, 0.2); color: var(--success); border: 1px solid var(--success); }
+.claimed { background-color: rgba(255,255,255,0.15); color: #fff; text-decoration: line-through; }
+
+/* Item interaction button */
+.item button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.card p a, .card a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+.card p a:hover, .card a:hover {
+    text-decoration: underline;
+}
+/* Custom Added Design Elements */
+.item-img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.badge-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.lost { background-color: rgba(229, 115, 115, 0.2); color: #e57373; border: 1px solid #e57373; }
+.found { background-color: rgba(129, 199, 132, 0.2); color: #81c784; border: 1px solid #81c784; }
+.claimed-status { background-color: rgba(255, 255, 255, 0.15); color: #fff; text-decoration: line-through; border: 1px solid #fff; }
+
+.claimed-tag {
+    color: #b0bec5;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.delete-btn {
+    background-color: #d32f2f !important;
+    color: #fff !important;
+}
+.delete-btn:hover {
+    background-color: #b71c1c !important;
+    box-shadow: 0 0 10px rgba(211, 47, 47, 0.4) !important;
+}
+
+input[type="file"] {
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 5px 0;
+    cursor: pointer;
+}
+/* ==========================================
+   THEME STYLING & VARIABLES 
+========================================== */
+:root {
+    /* Default Dark Mode Theme Base */
+    --primary-color: #004d40; 
+    --secondary-color: #00796b;
+    --accent-color: #d4af37; 
+    --bg-dark: #0a1917;
+    --bg-card: rgba(255, 255, 255, 0.08);
+    --text-main: #f5f5f5;
+    --text-muted: #b0bec5;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --input-bg: rgba(0, 0, 0, 0.2);
+}
+
+/* Light Mode Variations */
+body.light-mode {
+    --bg-dark: #f4f7f6;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --text-main: #1a3330;
+    --text-muted: #546e7a;
+    --border-color: rgba(0, 77, 64, 0.15);
+    --input-bg: #ffffff;
+    background: linear-gradient(135deg, #e0f2f1 0%, #f4f7f6 100%);
+}
+
+/* Specific component changes for light mode text readability */
+body.light-mode .item {
+    background: var(--bg-card);
+    box-shadow: 0 4px 15px rgba(0, 77, 64, 0.08);
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--primary-color);
+}
+
+body.light-mode .item h3 {
+    color: var(--primary-color);
+}
+
+body.light-mode input, 
+body.light-mode textarea, 
+body.light-mode select {
+    color: #000;
+    border: 1px solid rgba(0, 77, 64, 0.2);
+}
+
+/* Theme Toggle Button Style */
+.theme-toggle-btn {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 600;
+    width: auto; /* Overrides global full-width button */
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.theme-toggle-btn:hover {
+    background: var(--accent-color);
+    color: #000;
+    transform: scale(1.05);
+}
