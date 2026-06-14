@@ -15,7 +15,7 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://127.0.0.1:27017/griet_lost_found")
+mongoose.connect("mongodb+srv://dikshithadumala_db_user:24241a0509@cluster0.ywhzikr.mongodb.net/?appName=Cluster0")
 .then(() => {
     console.log("MongoDB Connected Successfully");
 })
